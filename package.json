@@ -1,0 +1,23 @@
+{
+  "name": "es6-express",
+  "version": "1.0.0",
+  "description": "## Step 1. Create the directory structure. ```bash mkdir -p es6-express/src ``` ## Step 2. Initialize node.js. ```bash cd es6-express npm init -y ``` ## Step 3. Install express. ```bash npm install express ``` ## Step 4. Install babel. ```bash npm install --save-dev @babel/cli @babel/core @babel/node @babel/preset-env ``` ## Step 5. Configure babel. Create a `.babelrc` file in the root directory.  Add the following lines to it: ```json {     \"presets\": [\"@babel/preset-env\"] } ```",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec babel-node src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "nodemon": "^1.19.1"
+  }
+}
