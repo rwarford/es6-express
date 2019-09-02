@@ -52,7 +52,7 @@ app.listen(PORT, () =>
 ## Step 8. Create a script to run nodemon with babel.
 Add the following line to the `scripts` section of your `package.json` file:
 ```json
-    "dev": "nodemon --exec babel-node src/app.js"
+    "dev_server": "NODE_ENV=production nodemon --exec babel-node src/app.js"
 ```
 You may also want to change the `"main"` entry to point to `app.js`:
 ```json
@@ -60,5 +60,22 @@ You may also want to change the `"main"` entry to point to `app.js`:
 ```
 ## Step 9. Start nodemon.
 ```bash
-npm run dev
+npm run dev_server
+```
+## Step 10.  Add production scripts.
+Install npm-run-all.
+```bash
+npm install --save-dev npm-run-all
+```
+
+Add the production scripts to `package.json`:
+```json
+    "clean": "rm -rf dist/",
+    "build": "babel ./src --out-dir dist",
+    "prod_server": "node ./dist/app.js",
+    "prod": "NODE_ENV=production npm-run-all clean build prod_server"
+```
+To build and run the production code:
+```bash
+npm run prod
 ```
